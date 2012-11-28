@@ -1,21 +1,45 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
 <head>
-  <meta charset="utf-8">
-  <title>AJS Components</title>
-  <link rel="stylesheet" href="css/app.css"/>
+    <meta charset="utf-8">
+    <title>AJS Components</title>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/chosen.css"/>
 </head>
-<body ng-controller="ContactsCtrl">
+<body>
 
-  <s5b-contacts></s5b-contacts>
+<div ng-controller="ContactsCtrl">
+    <s5b-contacts></s5b-contacts>
+</div>
 
-  <footer>Component Example using Angular seed app: v<span app-version></span></footer>
+<div ng-controller="RecipientsController">
+    <h1>Chosen</h1>
 
-  <script src="lib/angular/angular.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/services.js"></script>
-  <script src="js/controllers.js"></script>
-  <script src="js/filters.js"></script>
-  <script src="js/directives.js"></script>
+    <p><input type="text" ng-model="name">&nbsp;<button ng-click="addRecipient()">Add Recipient</button></p>
+
+    <ul><li ng-repeat="possibility in recipientsList">{{possibility.name}}</li></ul>
+
+    <select data-placeholder="Choose a Recipient" multiple class="span4 chzn-select" chosen
+            ng-model="recipients" ng-options="recipient.name for recipient in recipientsList">
+    </select>
+
+    <table>
+        <thead><tr><th>All</th><th>Selected</th></tr></thead>
+    </table>
+
+    <ul><li ng-repeat="recipient in recipients"><strong>{{recipient.name}}</strong></li></ul>
+</div>
+
+
+<footer>Component Example using Angular seed app: v<span app-version></span></footer>
+
+<script src="lib/jquery/jquery-1.8.3.min.js"></script>
+<script src="lib/angular/angular.js"></script>
+<script src="lib/chosen/chosen.jquery.js"></script>
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/directives.js"></script>
 </body>
 </html>

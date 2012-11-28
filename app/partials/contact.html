@@ -1,1 +1,10 @@
-<p>Contact name: <b>{{contact.name}}</b></p>
+<div class="contact">
+    <p>Name: <b>{{contact.name}}</b><br/>
+        Suburb: <b>{{contact.suburb}}</b><br/>
+        Car: <b>{{contact.car}}</b><br/>
+
+    <div ng-include src="editor.url"></div>
+    <button ng-click="edit_toggle()">{{editor.label}}</button>
+    </p>
+</div>
+
