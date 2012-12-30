@@ -1,7 +1,7 @@
 /* app css stylesheet */
 
 body {
-    font-family: Verdana;
+    font-family: Verdana, sans-serif;
     padding: 3em;
 }
 
@@ -15,6 +15,10 @@ h1 {
     margin: 0.25em;
     width: 40em;
     background-color: #dee;
+}
+
+.contact:hover {
+    outline: pink solid 8px;
 }
 
 footer {
